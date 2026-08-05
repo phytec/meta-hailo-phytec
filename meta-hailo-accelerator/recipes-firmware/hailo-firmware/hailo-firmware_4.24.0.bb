@@ -10,9 +10,11 @@ SRC_URI = "${BASE_URI}/${FW_AWS_DIR}/${FW};md5sum=e8dc953946a5bf47ca8554e78f25bb
 		${BASE_URI}/${FW_AWS_DIR}/${LICENSE_FILE};md5sum=263ee034adc02556d59ab1ebdaea2cda"
 
 LICENSE = "LICENSE"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/${LICENSE_FILE};md5=263ee034adc02556d59ab1ebdaea2cda"
+LIC_FILES_CHKSUM = "file://${UNPACKDIR}/${LICENSE_FILE};md5=263ee034adc02556d59ab1ebdaea2cda"
 
-FW_PATH = "${WORKDIR}/hailo8_fw.${PV}.bin"
+FW_PATH = "${UNPACKDIR}/hailo8_fw.${PV}.bin"
+
+S = "${UNPACKDIR}"
 
 do_install() {
 	# Stores hailo8_fw.bin in the rootfs under ${nonarch_base_libdir} - /usr/lib/firmware/hailo
