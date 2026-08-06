@@ -20,7 +20,7 @@ do_install:append() {
 
     rm -f ${D}/${libdir}/gstreamer-1.0/libgsthailotracers.so
     find ${D}/${libdir}/gstreamer-1.0/ -name 'libgsthailotracers.so.[0-9]' -delete
-    mv -f ${D}/${libdir}/gstreamer-1.0/libgsthailotracers.so.${PV} ${D}/${libdir}/gstreamer-1.0/libgsthailotracers.so
+    mv -f ${D}/${libdir}/gstreamer-1.0/libgsthailotracers.so.* ${D}/${libdir}/gstreamer-1.0/libgsthailotracers.so
 }
 
 
@@ -28,8 +28,8 @@ DEPENDS += "glib-2.0-native glib-2.0 gstreamer1.0 gstreamer1.0-plugins-base libg
 
 TAPPAS_BUILD_TARGET = "tracers"
 
-FILES:${PN} += "/usr/lib/gstreamer-1.0/libgsthailotracers.so /usr/lib/gstreamer-1.0/libgsthailotracers.so.${PV}"
-FILES:${PN}-lib += "/usr/lib/gstreamer-1.0/libgsthailotracers.so.${PV} /usr/lib/gstreamer-1.0/libgsthailotracers.so"
+FILES:${PN} += "/usr/lib/gstreamer-1.0/libgsthailotracers.so /usr/lib/gstreamer-1.0/libgsthailotracers.so.*"
+FILES:${PN}-lib += "/usr/lib/gstreamer-1.0/libgsthailotracers.so.* /usr/lib/gstreamer-1.0/libgsthailotracers.so"
 RDEPENDS:${PN}-staticdev = ""
 RDEPENDS:${PN}-dev = ""
 RDEPENDS:${PN}-dbg = ""
