@@ -13,7 +13,7 @@ inherit hailotools-base
 do_install:append() {
     rm -f ${D}/${libdir}/gstreamer-1.0/libgsthailotools.so
     rm -f ${D}/${libdir}/gstreamer-1.0/libgsthailotools.so.[0-9]
-    mv -f ${D}/${libdir}/gstreamer-1.0/libgsthailotools.so.${PV} ${D}/${libdir}/gstreamer-1.0/libgsthailotools.so
+    mv -f ${D}/${libdir}/gstreamer-1.0/libgsthailotools.so.* ${D}/${libdir}/gstreamer-1.0/libgsthailotools.so
 }
 
 
@@ -25,9 +25,9 @@ EXTRA_OEMESON += " \
 # libgsthailotools requires opencv, xtensor, xtl, and libgsthailo to compile and run
 TAPPAS_BUILD_TARGET = "plugins"
 
-FILES:${PN} += "${libdir}/libgsthailometa.so.${PV} ${libdir}/libhailo_tracker.so.${PV} ${libdir}/libhailo_opencv_utils.so.${PV} \
+FILES:${PN} += "${libdir}/libgsthailometa.so.* ${libdir}/libhailo_tracker.so.* ${libdir}/libhailo_opencv_utils.so.* \
                 ${libdir}/gstreamer-1.0/libgsthailotools.so"
-FILES:${PN}-lib += "${libdir}/libgsthailometa.so.${PV} ${libdir}/libhailo_tracker.so.${PV} ${libdir}/libhailo_opencv_utils.so.${PV} \
+FILES:${PN}-lib += "${libdir}/libgsthailometa.so.* ${libdir}/libhailo_tracker.so.* ${libdir}/libhailo_opencv_utils.so.* \
                     ${libdir}/gstreamer-1.0/libgsthailotools.so"
 RDEPENDS:${PN}-staticdev = ""
 RDEPENDS:${PN}-dev = ""
